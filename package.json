@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsenecal/team-profile-generator.git"
+  },
+  "author": "Roodolph Senecal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsenecal/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/rsenecal/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
