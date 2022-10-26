@@ -1,4 +1,4 @@
-const Manager = require('../lib/manager');
+const Intern = require('../lib/intern');
 const intern = new Intern('Roodolph', '9175971649', 'roodysenecal@gmail.com', 'Poly');
 
 it('would create a new manager object' , () => {
