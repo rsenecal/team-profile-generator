@@ -333,7 +333,7 @@ function createEngineerSection(name, id, email, githubaccount)
        <div class="card-body">
            <h5 class="card-title">Employee Name: ${name}</h5>
            <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
-           <ul class="list-group list-group-flush">
+           <ul class="list-group list-group-flush">clear
                <li class="list-group-item">Employee ID: ${id}</li>
                <li class="list-group-item">Email Address: ${email}</li>
                <li class="list-group-item">School: ${githubaccount} </li>
@@ -365,17 +365,4 @@ function (err) {
 );
 
 }
-// const buildTeam = () => {
-
-    // console.log(teamMembers);
-    // // fs.writeFileSync("teamprofile.html", siteHeader);
-    // console.log(Team);
-    
-// Building team*******************
-
-    // if (!fs.existsSync(OUTPUT_DIR)){
-    //     fs.mkdirSync(OUTPUT_DIR)
-    // }
-    // fs.writeFile('teamprofile.html', buildSite(teamMembers));
-// }
 managerInput();
