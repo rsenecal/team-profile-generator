@@ -220,7 +220,7 @@ const engineerInput =() => {
              {
                  type: 'input',
                  name: "githubaccount",
-                 message: 'Enter your Github Account  *: ',
+                 message: 'Enter your Github Account (Required): ',
                  validate: githubaccount => {
                  if (githubaccount) {
                      return true;
@@ -232,14 +232,15 @@ const engineerInput =() => {
      
          ])
          .then ((answers) => {
-             console.log(answers)
+             console.log(answers);
+             console.log(answers.githubaccount);
              const engineer = new Engineer(answers.empName, answers.employeeid, answers.empEmail, answers.githubaccount );
             //  teamMembers.push(engineer);
              let engName = engineer.name;
              let engId = engineer.id;
              let engEmail = engineer.email;
              let engGithub = engineer.githubaccount;
-             createEngineerSection(engName, engId,engEmail,engGithub);
+             createEngineerSection(engName, engId, engEmail, engGithub);
              optionMenu();
          })
 
@@ -265,7 +266,7 @@ function createManagerSection (name, id, email, officeNumber)
     <div class=""container>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <span class="navbar-text">
-         <h2> My Team</h2>
+         <h2> My Team Profile</h2>
         </span>
       </nav>
     </div>
@@ -273,17 +274,15 @@ function createManagerSection (name, id, email, officeNumber)
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card" style="width: 15rem;">
+                <div class="card" style="width: 20rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Employee's Name: ${name} </h5>
+                        <h5 class="card-title">${name} </h5>
                         <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"> Employee ID: ${id}</li>
-                            <li class="list-group-item">Email Address: ${email}</li>
+                            <li class="list-group-item"><a href="mailto: ${email}"> Send Email </a></li>
                             <li class="list-group-item">Office Number: ${officeNumber} </li>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </ul>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
             </div>`, 
@@ -294,23 +293,20 @@ function createManagerSection (name, id, email, officeNumber)
 }
 
 
-
-
 function createInternSection(name, id, email, school)
 {
     fs.appendFile('teamprofile.html',
    `
    <div class="col">
-   <div class="card" style="width: 15rem;">
+   <div class="card" style="width: 20rem;">
        <div class="card-body">
-           <h5 class="card-title">Employee Name: ${name}</h5>
+           <h5 class="card-title">${name}</h5>
            <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
            <ul class="list-group list-group-flush">
                <li class="list-group-item">Employee ID: ${id}</li>
-               <li class="list-group-item">Email Address: ${email}</li>
+               <li class="list-group-item"><a href="mailto: ${email}"> Send Email </a></li>
                <li class="list-group-item">School: ${school} </li>
            </ul>
-       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
        </div>
    </div>
 </div>
@@ -323,22 +319,21 @@ function createInternSection(name, id, email, school)
 }
 
 
-function createEngineerSection(name, id, email, githubaccount)
+function createEngineerSection(name, id, email, github)
 {
- 
+ console.log("Github Account:" + github )
     fs.appendFile('teamprofile.html',
    `
    <div class="col">
-   <div class="card" style="width: 15rem;">
+   <div class="card" style="width: 20rem;">
        <div class="card-body">
-           <h5 class="card-title">Employee Name: ${name}</h5>
+           <h5 class="card-title">${name}</h5>
            <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
-           <ul class="list-group list-group-flush">clear
+           <ul class="list-group list-group-flush">
                <li class="list-group-item">Employee ID: ${id}</li>
-               <li class="list-group-item">Email Address: ${email}</li>
-               <li class="list-group-item">School: ${githubaccount} </li>
+               <li class="list-group-item"><a href="mailto: ${email}"> Send Email </a></li>
+               <li class="list-group-item"><a href="https://github.com/${github}/">Github </a></li>
            </ul>
-       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
        </div>
    </div>
 </div>
