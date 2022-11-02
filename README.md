@@ -8,7 +8,9 @@ This is CLI application. User can create team profile by role. One Manager per t
 ## Getting Started
 <img width="1780" alt="Screen Shot 2022-10-26 at 12 03 16 AM" src="https://user-images.githubusercontent.com/50510/197931861-38badea5-0658-45fc-9af0-a8233a93ea85.png">
 
+## Application walk-through
 
+![Video Walk-through](https://www.loom.com/share/ff6de0cc04d9484eb460fb857727966e)
 
 ### Dependencies
 
